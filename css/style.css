@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,400;0,500;0,700;1,100;1,700&family=Mulish:ital,wght@0,200;0,300;0,700;0,900;1,200;1,700&display=swap');
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    --font-primary: "Mulish",serif;
+    --font-secundary: 'Josefin Slab',serif;
+}
+
+.hamburguer{
+
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 1000;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+    cursor: pointer;
+}
+
+.show-menu #line1{
+    right: 16em;
+    transform: rotate(45deg) translate(.8em, .4em);
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu #line3{
+    right: 16em;
+    transform: rotate(-45deg);
+}
+
+
+.line {
+    width: 100%;
+    background-color: white;
+    height: .1rem;
+    box-shadow: 0.1rem 0.1rem 1px black;
+    transition: transform  .5s;
+}
+
+
+
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.image-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,1)
+}
+
+
+
+.image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity:0.5;
+    animation: zoom 25s;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute  ;
+    top: 30%;
+    left: 15%;
+  
+}
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+
+    }
+    100%{
+        transform: translateY(0) rotateY(0) ;
+        opacity:1;
+    }
+}
+
+.banner h1{
+    color: white;
+    font-size: 3.5rem;
+    font-family:var(--font-primary);
+    text-shadow: .2rem .2rem 2px rgba(0, 0, 0, 0.4);
+    animation: moveBanner 1s 0.5s forwards;
+    opacity: 0;
+}
+
+.banner p {
+    color: white;
+    font-size: 1.5rem;
+    font-family:var(--font-secundary);
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: moveBanner 1s 0.7s forwards;
+}   
+
+.banner button {
+    font-family: var(--font-primary);
+    color: white;
+    background: #8E2DE2;  /* fallback for old browsers */;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */;
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    ;
+    border: none;
+    padding: 1rem 2rem 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: moveBanner 1s 0.9s forwards;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.banner button:hover{
+    color:black;
+    cursor: pointer;
+}
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 0.5s;
+}
+
+.show-menu .sidebar{
+    right: 0;
+}
+
+
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-item{
+    text-align: center;
+}
+
+.menu-link{
+    font-family: var(--font-primary);
+    color: #7c7c7c;
+    font-size: 2rem;
+    transition: color 0.5s;
+}
+
+.menu-link:hover{
+
+    color: #340061;
+
+}
+
+.social-media{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+}
+
+.social-media i{
+    background-color: #8E2DE2;
+    color: #ffffff;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
