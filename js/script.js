@@ -5,4 +5,9 @@ hamburguer.addEventListener("click", function () {
 
 });
 
-
+function changeAllColors() {
+    const pCounter = document.querySelectorAll("p");
+    for (let i = 0; i < pCounter.length; i++) {
+        pCounter[i].style.color = "red";
+    }
+}
