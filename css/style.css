@@ -351,17 +351,22 @@ header{
     height: 100%;
     border-radius: .5rem;
     opacity: 0.8;
+    transition: opacity .5s;
 }
 
-.card-img-wrapper img:hover{
-    opacity: 0.4;
+.card:hover .card-img-wrapper img{
+    opacity: .5;
 }
+
 
 .card-info{
    position: absolute;
    bottom: 0;
    padding: 2rem;
    text-shadow: 0.3rem 0.1rem 0.3rem rgba(0,0,0, .4); 
+   visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
 }
 
 .card-info h2{
@@ -369,12 +374,14 @@ header{
     font-size: 2rem;
     font-weight: 500;
     color: white;
+    margin-bottom: 1.5rem;
 }
 
 .card-info h3{
     font-family: var(--font-secundary);
     font-weight: bolder;
     color: #f700a4;
+    margin-bottom: 1.5rem;
 }
 
 
@@ -383,9 +390,11 @@ header{
     color: #eeeeee;
     font-weight: 400;
     width: 80%;
+    margin-bottom: 2rem;
 }
 
 .card-info button{
+    
     width: 8rem;
     height: 2.5rem;
     background: #8E2DE2;  /* fallback for old browsers */;
@@ -397,7 +406,12 @@ header{
     color: white;
     cursor: pointer;
     text-transform: capitalize;
+    box-shadow: 0 .1rem .8rem rgba(0,0,0,0.4);
 }
 
 
-
+.card:hover .card-info{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+}
